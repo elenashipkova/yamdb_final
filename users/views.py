@@ -1,13 +1,14 @@
 from django.core.mail import send_mail
 from django.utils.crypto import get_random_string
-from rest_framework import status, permissions, generics, viewsets
+from rest_framework import generics, permissions, status, viewsets
 from rest_framework.decorators import action
-from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
 from django.shortcuts import get_object_or_404
 
 from titles.permissions import IsAdminAdmin
+
 from .models import User
 from .serializers import (RegEmailSerializer,
                           RegUserSerializer,

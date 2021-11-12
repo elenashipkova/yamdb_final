@@ -1,6 +1,6 @@
 from django.urls import path
 
-from ..views import TitleListAPIView, TitleDetailAPIView
+from ..views import TitleDetailAPIView, TitleListAPIView
 
 app_name = 'objects'
 

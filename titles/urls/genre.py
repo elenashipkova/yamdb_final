@@ -1,6 +1,6 @@
 from django.urls import path
 
-from ..views import GenreListAPIView, GenreDetailAPIView
+from ..views import GenreDetailAPIView, GenreListAPIView
 
 app_name = 'genres'
 
