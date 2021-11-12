@@ -10,9 +10,7 @@ from rest_framework_simplejwt.tokens import AccessToken
 from titles.permissions import IsAdminAdmin
 
 from .models import User
-from .serializers import (RegEmailSerializer,
-                          RegUserSerializer,
-                          UserSerializer)
+from .serializers import RegEmailSerializer, RegUserSerializer, UserSerializer
 
 
 class APIRegEmail(APIView):
