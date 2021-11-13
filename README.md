@@ -1,3 +1,5 @@
+![workflow](https://github.com/elenashipkova/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 # YaMDb
 
 ## Описание проекта
@@ -77,10 +79,6 @@
 
 
 **Полная документация по API доступна здесь** _http://127.0.0.1/redoc/_
-
-## Бейдж
-
-![workflow](https://github.com/elenashipkova/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ## Автор
