@@ -80,7 +80,7 @@
 
 ## Бейдж
 
-![master](https://github.com/elenashipkova/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
+![workflow](https://github.com/elenashipkova/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
 ## Автор
