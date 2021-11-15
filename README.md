@@ -42,7 +42,7 @@
     git clone https://github.com/elenashipkova/infra_sp2.git
     ```
 
-* Создать в корне проекта файл .env с константами:
+* В репозитории на GitHub прописать secrets:
 
     ```text
     DB_ENGINE=django.db.backends.postgresql
@@ -51,36 +51,47 @@
     POSTGRES_PASSWORD=postgres   # пароль для подключения к БД (установите свой)
     DB_HOST=db   # название сервиса (контейнера)
     DB_PORT=5432   # порт для подключения к БД
+    SECRET_KEY=   # ваш секретный ключ
+    DEBUG_VALUE=False
+    ALLOWED_HOSTS=[*]
+    DOCKER_USERNAME, DOCKER_PASSWORD  # имя пользователя и пароль DockerHub для скачивания образа
+    USER, HOST, SSH_KEY, PASSPHRASE  # имя и IP-адрес вашего сервера, приватный ssh-ключ, пароль, если используется
+    TELEGRAM_TO, TELEGRAM_TOKEN  # ID вашего аккаунта в телеграм, токен вашего бота
     ```
 
-* Запуск на основе контейнеров Docker (выполнить в терминале в директории проекта):
+* На удаленном сервере установить Docker и docker-compose:
     
     ```bash
-    docker-compose up -d --build
+    sudo apt install docker.io
+    sudo apt install docker-compose
     ```
 
-* Применить миграции:
+* Скопировать файлы docker-compose.yaml и nginx/default.conf из проекта на ваш сервер в home/<ваш_username>/docker-compose.yaml и home/<ваш_username>/nginx/default.conf
+
+* При пуше в ветку master код автоматически деплоится на сервер (при успешном workflow). Затем нужно подключиться к удаленному серверу и
+
+
+    1. применить миграции:
 
     ```bash
     docker-compose exec web python3 manage.py migrate --noinput
     ```
 
-* Создать суперпользователя:
+    2. создать суперпользователя:
     
     ```bash
     docker-compose exec web python3 manage.py createsuperuser
     ```
 
-* Заполнить базу данных:
+    3. заполнить базу данных:
 
     ```bash
     docker-compose exec web python3 manage.py loaddata fixtures.json
     ```
 
+## Развернутый проект доступен по адресу: _http://178.154.226.128_
 
-**Полная документация по API доступна здесь** _http://127.0.0.1/redoc/_
-
-
+    
 ## Автор
 
 * Елена Шипкова
